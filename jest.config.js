@@ -18,7 +18,7 @@ module.exports = {
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: false,
+  collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: null,
@@ -52,10 +52,10 @@ module.exports = {
   // forceCoverageMatch: [],
 
   // A path to a module which exports an async function that is triggered once before all test suites
-  // globalSetup: null,
+  // globalSetup: '<rootDir>/config/setup.js',
 
   // A path to a module which exports an async function that is triggered once after all test suites
-  // globalTeardown: null,
+  // globalTeardown: '<rootDir>/config/teardown.js',
 
   // A set of global variables that need to be available in all test environments
   // globals: {},
@@ -88,7 +88,7 @@ module.exports = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: "ts-jest",
+  // preset: "jest-puppeteer",
 
   // Run tests from one or more projects
   // projects: null,
@@ -130,6 +130,7 @@ module.exports = {
 
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
+  // testEnvironment: './puppeteer_environment.js',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -138,7 +139,7 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ["<rootDir>/tests/**/*.(spec|test).js?(x)"],
+  testMatch: ["<rootDir>/tests/**/*.(spec|test|e2e).js?(x)"],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -166,7 +167,7 @@ module.exports = {
     "^.+\\.js$": "babel-jest",
     '^.+\\.(css|less)$': '<rootDir>/config/cssTransform.js',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/config/fileTransform.js',
-},
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   transformIgnorePatterns: ["<rootDir>/node_modules/(?!(lodash-es|other-es-lib))"]
