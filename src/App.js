@@ -17,6 +17,7 @@ class App extends Component {
             Learn React
           </a>
           <Button>点我</Button>
+          <Button>再点我</Button>
         </header>
       </div>
     );
