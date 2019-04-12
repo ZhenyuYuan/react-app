@@ -24,6 +24,15 @@ exports[` 1`] = `
         点 我
       </span>
     </button>
+    <button
+      className="ant-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        再点我
+      </span>
+    </button>
   </header>
 </div>
 `;
