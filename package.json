@@ -1,9 +1,16 @@
 {
   "name": "react-app",
+  "keywords": [
+    "ice-scaffold"
+  ],
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@alifd/next": "^1.15.2",
+    "@icedesign/form-binder": "^1.0.6",
     "antd": "3.9.2",
+    "bizcharts": "^3.5.4-beta.0",
+    "prop-types": "^15.7.2",
     "react": "^16.5.2",
     "react-dom": "^16.4.1",
     "react-scripts": "2.1.8"
@@ -36,5 +43,11 @@
     "jest-puppeteer": "3.9.0",
     "puppeteer": "^1.14.0",
     "react-test-renderer": "^16.5.2"
+  },
+  "scaffoldConfig": {
+    "type": "react",
+    "name": "ice-design-pro",
+    "title": "ICE Design Pro",
+    "screenshot": "https://img.alicdn.com/tfs/TB1_bulmpOWBuNjy0FiXXXFxVXa-1920-1080.png"
   }
 }
