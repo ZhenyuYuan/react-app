@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <a
+      className="App-link"
+      href="https://reactjs.org"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Learn React
+    </a>
+    <button
+      className="ant-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        点 我
+      </span>
+    </button>
+    <button
+      className="ant-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        再点我
+      </span>
+    </button>
+  </header>
+</div>
+`;

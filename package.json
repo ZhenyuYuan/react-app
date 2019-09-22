@@ -1,9 +1,17 @@
 {
   "name": "react-app",
+  "keywords": [
+    "ice-scaffold"
+  ],
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@alifd/next": "^1.15.2",
+    "@icedesign/form-binder": "^1.0.6",
     "antd": "3.9.2",
+    "bizcharts": "^3.5.4-beta.0",
+    "ckeditor4-react": "^1.0.0-beta.2",
+    "prop-types": "^15.7.2",
     "react": "^16.5.2",
     "react-dom": "^16.4.1",
     "react-scripts": "2.1.8"
@@ -24,13 +32,23 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^23.6.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
     "jest": "^23.6.0",
+    "jest-puppeteer": "3.9.0",
+    "puppeteer": "^1.14.0",
     "react-test-renderer": "^16.5.2"
+  },
+  "scaffoldConfig": {
+    "type": "react",
+    "name": "ice-design-pro",
+    "title": "ICE Design Pro",
+    "screenshot": "https://img.alicdn.com/tfs/TB1_bulmpOWBuNjy0FiXXXFxVXa-1920-1080.png"
   }
 }
