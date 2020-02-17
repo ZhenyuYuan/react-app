@@ -1,4 +1,4 @@
-该项目还在持续更新中...，
+该项目为试验田，还在持续更新中...，
 
 链接如下：https://github.com/ZhenyuYuan/react-app/tree/dev
 
