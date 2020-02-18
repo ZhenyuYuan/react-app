@@ -39,33 +39,124 @@
                 toolbarIcons: function () {
                     // Or return editormd.toolbarModes[name]; // full, simple, mini
                     // Using "||" set icons align right.
-                    return ["undo", "redo", "|", "bold", "hr", "|", "preview", "watch", "|", "fullscreen", "info", "testIcon", "redFont", "greenFont", "blueFont", "smallFont", "bigFont", "file", "faicon", "||", "watch", "fullscreen", "preview", "testIcon"]
+                    return ["undo", "redo", "|", "bold", "hr", "|", "preview", "watch", "|", "fullscreen", "info", "testIcon", "redFont", "blueFont", "smallFont", "bigFont", "file", "faicon", "||", "watch", "fullscreen", "preview", "testIcon"]
                 },
 
                 toolbarIconTexts: {
                     redFont: "红色字体",  // 如果没有图标，则可以这样直接插入内容，可以是字符串或HTML标签
-                    greenFont:"绿色字体",
-                    blueFont:"蓝色字体",
-                    smallFont:"小号字",
-                    bigFont:"大号字" 
+                    blueFont: "蓝色字体",
+                    smallFont: "小号字",
+                    bigFont: "大号字"
                 },
 
                 // 自定义工具栏按钮的事件处理
                 toolbarHandlers: {
                     redFont: function (cm, icon, cursor, selection) {
+                        let disHTML =/<\s*(\S+)(\s[^>]*)?>[\s\S]*<\s*\/\1\s*>/i;
+                        let isFontTag = /<\s*font[\s\S]*>[\s\S]*<\s*\/font\s*>/i;
+                        let isColor = /\s*color\s*=\s*(\'|\")[\s\S]*(\'|\")/i;
+                        if (selection === "" 
+                        // || disHTML.test(selection)
+                        ) {
+                            window.alert("文字内容不能为空！");
+                            // cm.setCursor(cursor.line, cursor.ch + 1);
+                            return;
+                        }
+                        if(isFontTag.test(selection)){
+                            let res = selection.replace(isColor,' color='+'\''+'red'+'\'');
+                            // selection.innerHtml
+                            console.log(selection);
+                            console.log(res);
+                            cm.replaceSelection(res);
+                            return;
+                        }
+                        if(disHTML.test(selection)){
+                            window.alert("请选择正确的文字内容！");
+                            return;
+                        }
                         cm.replaceSelection("<font color='red'>" + selection + "</font>");
-                    },
-                    greenFont: function (cm, icon, cursor, selection) {
-                        cm.replaceSelection("<font color='green'>" + selection + "</font>");
+                        // 如果当前没有选中的文本，将光标移到要输入的位置
+                        
                     },
                     blueFont: function (cm, icon, cursor, selection) {
+                        let disHTML =/<\s*(\S+)(\s[^>]*)?>[\s\S]*<\s*\/\1\s*>/i;
+                        let isFontTag = /<\s*font[\s\S]*>[\s\S]*<\s*\/font\s*>/i;
+                        let isColor = /\s*color\s*=\s*(\'|\")[\s\S]*(\'|\")/i;
+                        if (selection === "" 
+                        // || disHTML.test(selection)
+                        ) {
+                            window.alert("文字内容不能为空！");
+                            // cm.setCursor(cursor.line, cursor.ch + 1);
+                            return;
+                        }
+                        if(isFontTag.test(selection)){
+                            let res = selection.replace(isColor,' color='+'\''+'blue'+'\'');
+                            // selection.innerHtml
+                            console.log(selection);
+                            console.log(res);
+                            cm.replaceSelection(res);
+                            return;
+                        }
+                        if(disHTML.test(selection)){
+                            window.alert("请选择正确的文字内容！");
+                            return;
+                        }
                         cm.replaceSelection("<font color='blue'>" + selection + "</font>");
+                        // 如果当前没有选中的文本，将光标移到要输入的位置
+                        
                     },
                     smallFont: function (cm, icon, cursor, selection) {
+                        let disHTML =/<\s*(\S+)(\s[^>]*)?>[\s\S]*<\s*\/\1\s*>/i;
+                        let isFontTag = /<\s*font[\s\S]*>[\s\S]*<\s*\/font\s*>/i;
+                        let isSize = /\s*size\s*=\s*(\'|\")[\s\S]*(\'|\")/i;
+                        if (selection === "" 
+                        // || disHTML.test(selection)
+                        ) {
+                            window.alert("文字内容不能为空！");
+                            // cm.setCursor(cursor.line, cursor.ch + 1);
+                            return;
+                        }
+                        if(isFontTag.test(selection)){
+                            let res = selection.replace(isSize,' size='+'\''+'5'+'\'');
+                            // selection.innerHtml
+                            console.log(selection);
+                            console.log(res);
+                            cm.replaceSelection(res);
+                            return;
+                        }
+                        if(disHTML.test(selection)){
+                            window.alert("请选择正确的文字内容！");
+                            return;
+                        }
                         cm.replaceSelection("<font size='5'>" + selection + "</font>");
+                        // 如果当前没有选中的文本，将光标移到要输入的位置
+                        
                     },
                     bigFont: function (cm, icon, cursor, selection) {
-                        cm.replaceSelection("<font size='50'>" + selection + "</font>");
+                        let disHTML =/<\s*(\S+)(\s[^>]*)?>[\s\S]*<\s*\/\1\s*>/i;
+                        let isFontTag = /<\s*font[\s\S]*>[\s\S]*<\s*\/font\s*>/i;
+                        let isSize = /\s*size\s*=\s*(\'|\")[\s\S]*(\'|\")/i;
+                        if (selection === "" 
+                        // || disHTML.test(selection)
+                        ) {
+                            window.alert("文字内容不能为空！");
+                            // cm.setCursor(cursor.line, cursor.ch + 1);
+                            return;
+                        }
+                        if(isFontTag.test(selection)){
+                            let res = selection.replace(isSize,' size='+'\''+'20'+'\'');
+                            // selection.innerHtml
+                            console.log(selection);
+                            console.log(res);
+                            cm.replaceSelection(res);
+                            return;
+                        }
+                        if(disHTML.test(selection)){
+                            window.alert("请选择正确的文字内容！");
+                            return;
+                        }
+                        cm.replaceSelection("<font size='20'>" + selection + "</font>");
+                        // 如果当前没有选中的文本，将光标移到要输入的位置
                     }
                 }
             });
