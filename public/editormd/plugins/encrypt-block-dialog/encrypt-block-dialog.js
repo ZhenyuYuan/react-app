@@ -23,7 +23,11 @@
             var editor = this.editor;
             var settings = this.settings;
             var cursor = cm.getCursor();
-            var selection = cm.getSelection();
+            let isEncryptBlock = /\s*<div[\s]*(class[\s]*=[\s]*\'[\s]*encryptTexts[\s]*\')[\s\S]*>[\s\S]*<\s*\/div\s*>/i;
+            var isEncryptBlockStart = /<div[\s]*(class[\s]*=[\s]*\'[\s]*encryptTexts[\s]*\')[^>]*>/i;
+            var isEncryptBlockEnd = /<\s*\/div\s*>/i;
+            var selection = isEncryptBlock.test(cm.getSelection()) ? cm.getSelection().replace(isEncryptBlockStart, '').replace(isEncryptBlockEnd, ''): cm.getSelection();
+            // var selection = cm.getSelection();
             var classPrefix = this.classPrefix;
             var dialogLang = lang.dialog.encryptBlockText;
             var dialogName = classPrefix + pluginName, dialog;
@@ -79,7 +83,7 @@
                                 encryptTexts = "\r\n\r\n" + encryptTexts;
                             }
 
-                            cm.replaceSelection('\n<div class=' + '\'' + 'encryptTexts' + '\'' + ' style=' + '\'' + 'border:1px solid #000' + '\'' + '><p>加密内容:</p><p>' + encryptTexts + '</p></div>\n');
+                            cm.replaceSelection('\n<div class=' + '\'' + 'encryptTexts' + '\'' + ' style=' + '\'' + 'border:1px solid #000' + '\'' + '>加密内容:\n' + encryptTexts + '\n</div>\n');
 
                             this.hide().lockScreen(false).hideMask();
 
