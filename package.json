@@ -11,6 +11,7 @@
     "antd": "3.9.2",
     "bizcharts": "^3.5.4-beta.0",
     "ckeditor4-react": "^1.0.0-beta.2",
+    "griffith": "^1.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.5.2",
     "react-dom": "^16.4.1",
